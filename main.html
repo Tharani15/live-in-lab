@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastro Pulse</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="index.html" class="home-button">Back to Home</a>
+    <!-- Main Options Container -->
+    <div id="options-container" class="container">
+        <header>
+            <h1>Gastro Pulse</h1>
+        </header>
+        <h2>Select Your Option</h2>
+
+        <!-- Nutritional Meal Section -->
+        <div class="option nutritional" onclick="navigateTo('nutritionalMeal')">
+            <h3>Nutritional Meal</h3>
+            <p>Personalized dietary plans with meal suggestions and daily nutrition tracking.</p>
+        </div>
+
+        <!-- Health-Centric Section -->
+        <div class="option health-centric" onclick="navigateTo('healthCentric')">
+            <h3>Health-Centric</h3>
+            <p>Customized meals for specific health needs (e.g., BP, diabetes, low hemoglobin).</p>
+        </div>
+
+        <!-- Casual Craving Section -->
+        <div class="option craving" onclick="navigateTo('casualCraving')">
+            <h3>Casual Craving</h3>
+            <p>Home-cooked meal options for comfort cravings.</p>
+        </div>
+    </div>
+
+    <!-- Section Content -->
+    <div id="section-content" class="container" style="display: none;">
+        <button onclick="goBackToOptions()" class="back-button">Back to Options</button>
+
+        <!-- Nutritional Meal Section Content -->
+        <div id="nutritionalMeal" class="section" style="display: none;">
+            <h2>Nutritional Meal</h2>
+            <div class="form-group">
+                <label>Dietary Preferences:</label>
+                <select id="dietary-preference">
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="gluten-free">Gluten-Free</option>
+                    <option value="carb-free">Carb-Free</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Meal Timing:</label>
+                <select id="meal-timing">
+                    <option value="pre-workout">Pre-Workout Meal</option>
+                    <option value="post-workout">Post-Workout Meal</option>
+                </select>
+            </div>
+            <button onclick="startChatBot()">Get Meal Suggestions</button>
+            <p id="nutrition-status"></p>
+        </div>
+
+        <!-- Health-Centric Section Content -->
+        <div id="healthCentric" class="section" style="display: none;">
+            <h2>Health-Centric</h2>
+            <div class="form-group">
+                <label>Health Condition:</label>
+                <select id="health-condition">
+                    <option value="bp">High BP</option>
+                    <option value="sugar">Diabetes</option>
+                    <option value="low-hemoglobin">Low Hemoglobin</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <button onclick="suggestHealthMeals()">Get Health Meal Suggestions</button>
+            <p id="health-status"></p>
+        </div>
+
+        <!-- Casual Craving Section Content -->
+        <div id="casualCraving" class="section" style="display: none;">
+            <h2>Casual Craving</h2>
+            <!-- Vegetarian Section -->
+            <h3>Vegetarian Options</h3>
+            <div class="meal-category">
+                <div class="meal-item" onclick="navigateToMealDetail('breakfast')">
+                    <img src="C:\images/veg breakfast.jpg" alt="Breakfast">
+                    <p>Breakfast</p>
+                </div>
+                <div class="meal-item" onclick="navigateToMealDetail('lunch')">
+                    <img src="C:\images/veglunch.jpg" alt="Lunch">
+                    <p>Lunch</p>
+                </div>
+                <div class="meal-item" onclick="navigateToMealDetail('dinner')">
+                    <img src="C:\images/vegdinner.webp" alt="Dinner">
+                    <p>Dinner</p>
+                </div>
+                <div class="meal-item" onclick="navigateToMealDetail('soups')">
+                    <img src="C:\images/vegsoup.jpg" alt="Soups">
+                    <p>Soups</p>
+                </div>                
+            </div>
+
+            <!-- Non-Vegetarian Section -->
+            <h3>Non-Vegetarian Options</h3>
+            <div class="meal-category">
+                <div class="meal-item" onclick="navigateToMealDetail('nonVegBreakfast')">
+                    <img src="C:\images/nonvegbreakfast.jpg" alt="Non-Veg Breakfast">
+                    <p>Breakfast</p>
+                </div>
+                <div class="meal-item" onclick="navigateToMealDetail('nonVegLunch')">
+                    <img src="C:\images/nonveglunch.jpg" alt="Non-Veg Lunch">
+                    <p>Lunch</p>
+                </div>
+                <div class="meal-item" onclick="navigateToMealDetail('nonVegDinner')">
+                    <img src="C:\images/nonvegdinner.jpg" alt="Non-Veg Dinner">
+                    <p>Dinner</p>
+                </div>
+                <div class="meal-item" onclick="navigateToMealDetail('nonVegSoups')">
+                    <img src="C:\images/nonvegsoup.webp" alt="Non-Veg Soups">
+                    <p>Soups</p>
+                </div>
+            </div>
+            <h3>Desserts Options</h3>
+            <div class="meal-category">
+                <div class="meal-item" onclick="navigateToMealDetail('sweets')">
+                    <img src="C:\images/desserts.jpg" alt="sweets">
+                    <p>sweets</p>
+                </div>
+                <div class="meal-item" onclick="navigateToMealDetail('cakes')">
+                    <img src="C:\images/cakes.jpg" alt="cakes">
+                    <p>cakes</p>
+                </div>
+                <div class="meal-item" onclick="navigateToMealDetail('juices')">
+                    <img src="C:\images/juices.jpg" alt="juices">
+                    <p>juices</p>
+                </div>
+            </div>            
+        </div>
+        <!-- Breakfast Details -->
+        <div id="breakfast" class="section" style="display: none;">
+            <h2>Vegetarian Breakfast Options</h2>
+            <div class="meal-category">
+                <div class="meal-item">
+                    <img src="C:\images/Plain-Dosa.webp" alt="Dosa">
+                    <p>Dosa</p>
+                </div>
+                <div class="meal-item">
+                    <img src="C:\images/idly.jpeg" alt="Idly">
+                    <p>Idly</p>
+                </div>
+                <div class="meal-item">
+                    <img src="C:\images/poori.jpg" alt="Poori">
+                    <p>Poori</p>
+                </div>
+                <div class="meal-item">
+                    <img src="C:\images/pongal.cms" alt="Pongal">
+                    <p>Pongal</p>
+                </div>
+            </div>
+        </div>
+        <!-- Lunch Details -->
+        <div id="lunch" class="section" style="display: none;">
+            <h2>Vegetarian Lunch Options</h2>
+            <div class="meal-category">
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Dosa" alt="Dosa">
+                    <p>South Indian Thali</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Idly" alt="Idly">
+                    <p>North Indian Thali</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Poori" alt="Poori">
+                    <p></p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Pongal" alt="Pongal">
+                    <p>Pongal</p>
+                </div>
+            </div>
+        </div>
+        <!-- Dinner Details -->
+        <div id="breakfast" class="section" style="display: none;">
+            <h2>Vegetarian Breakfast Options</h2>
+            <div class="meal-category">
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Dosa" alt="Dosa">
+                    <p>Dosa</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Idly" alt="Idly">
+                    <p>Idly</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Poori" alt="Poori">
+                    <p>Poori</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Pongal" alt="Pongal">
+                    <p>Pongal</p>
+                </div>
+            </div>
+        </div>
+        <!-- Soup Details -->
+        <div id="breakfast" class="section" style="display: none;">
+            <h2>Vegetarian Breakfast Options</h2>
+            <div class="meal-category">
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Dosa" alt="Dosa">
+                    <p>Dosa</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Idly" alt="Idly">
+                    <p>Idly</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Poori" alt="Poori">
+                    <p>Poori</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Pongal" alt="Pongal">
+                    <p>Pongal</p>
+                </div>
+            </div>
+        </div>
+        <!-- Dessert Details -->
+        <div id="breakfast" class="section" style="display: none;">
+            <h2>Vegetarian Breakfast Options</h2>
+            <div class="meal-category">
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Dosa" alt="Dosa">
+                    <p>Dosa</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Idly" alt="Idly">
+                    <p>Idly</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Poori" alt="Poori">
+                    <p>Poori</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Pongal" alt="Pongal">
+                    <p>Pongal</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Non-Veg Breakfast Details -->
+        <div id="nonVegBreakfast" class="section" style="display: none;">
+            <h2>Non-Vegetarian Breakfast Options</h2>
+            <div class="meal-category">
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Egg+Toast" alt="Egg Toast">
+                    <p>Egg Toast</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Chicken+Sandwich" alt="Chicken Sandwich">
+                    <p>Chicken Sandwich</p>
+                </div>
+            </div>
+        </div>
+        <div id="nonVegLunch" class="section" style="display: none;">
+            <h2>Non-Vegetarian Lunch Options</h2>
+            <div class="meal-category">
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Egg+Toast" alt="Egg Toast">
+                    <p>Egg Toast</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Chicken+Sandwich" alt="Chicken Sandwich">
+                    <p>Chicken Sandwich</p>
+                </div>
+            </div>
+        </div>
+        <div id="nonVegDinner" class="section" style="display: none;">
+            <h2>Non-Vegetarian Dinner Options</h2>
+            <div class="meal-category">
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Egg+Toast" alt="Egg Toast">
+                    <p>Egg Toast</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Chicken+Sandwich" alt="Chicken Sandwich">
+                    <p>Chicken Sandwich</p>
+                </div>
+            </div>
+        </div>
+        <div id="nonVegSoup" class="section" style="display: none;">
+            <h2>Non-Vegetarian Soup Options</h2>
+            <div class="meal-category">
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Egg+Toast" alt="Egg Toast">
+                    <p>Egg Toast</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Chicken+Sandwich" alt="Chicken Sandwich">
+                    <p>Chicken Sandwich</p>
+                </div>
+            </div>
+        </div>
+        <div id="Desserts" class="section" style="display: none;">
+            <h2>Desserts Options</h2>
+            <div class="meal-category">
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Egg+Toast" alt="Egg Toast">
+                    <p>Egg Toast</p>
+                </div>
+                <div class="meal-item">
+                    <img src="https://via.placeholder.com/150x100?text=Chicken+Sandwich" alt="Chicken Sandwich">
+                    <p>Chicken Sandwich</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional categories like Lunch, Dinner, etc., can be duplicated in a similar format for Vegetarian and Non-Vegetarian options -->
+
+    </div>
+
+
+            
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
