@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetarian Options</title>
+    
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header and General Layout */
+        h1, h2 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Home Button */
+        .home-button {
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Meal Category Layout */
+        .meal-category {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .meal-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .meal-item img {
+            width: 100%;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .meal-item p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .meal-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .meal-item {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="main.html" class="home-button" data-aos="fade-down">Back to Home</a>
+
+    <!-- Title -->
+    <h2 data-aos="fade-up">Vegetarian Options</h2>
+
+    <!-- Meal Category Section -->
+    <div class="meal-category">
+        <div class="meal-item" onclick="navigateTo('veg-breakfast.html')" data-aos="fade-right" data-aos-delay="100">
+            <img src="images/veg-breakfast.jpg" alt="Vegetarian Breakfast">
+            <p>Breakfast</p>
+        </div>
+        <div class="meal-item" onclick="navigateTo('veg-lunch.html')" data-aos="fade-right" data-aos-delay="200">
+            <img src="images/veg-lunch.jpg" alt="Vegetarian Lunch">
+            <p>Lunch</p>
+        </div>
+        <div class="meal-item" onclick="navigateTo('veg-dinner.html')" data-aos="fade-left" data-aos-delay="300">
+            <img src="images/veg-dinner.jpg" alt="Vegetarian Dinner">
+            <p>Dinner</p>
+        </div>
+        <div class="meal-item" onclick="navigateTo('veg-soup.html')" data-aos="fade-left" data-aos-delay="400">
+            <img src="images/veg-soup.jpg" alt="Vegetarian Soups">
+            <p>Soups</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up" data-aos-delay="500">
+        <p>Explore a variety of vegetarian meals to suit your taste and health goals!</p>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init();
+
+        // Navigates to the specified page
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
