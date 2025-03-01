@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your Public Key
+    })();
+
+    function sendMail(event) {
+      event.preventDefault(); // Prevent form from reloading the page
+      
+      var templateParams = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+      };
+
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+        .then(function(response) {
+          console.log("SUCCESS!", response);
+          alert("Your message has been sent successfully!");
+          document.getElementById("contact-form").reset();
+        }, function(error) {
+          console.log("FAILED...", error);
+          alert("Your message has been sent successfully!");
+        });
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Times New Roman', serif;
+      background: url('C:\images/about.jpg') no-repeat center center/cover;
+      animation: gradientShift 6s infinite alternate;
+      color: white;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    h1, h2 {
+      color: #F3E5F5;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      color: #F3E5F5;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #6A1E55;
+      color: white;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-button:hover {
+      background-color: #3B1C32;
+      transform: scale(1.05);
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      animation: fadeInUp 1.5s ease-out;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section h2 {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    .about-container {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1.5s ease-out;
+      margin-bottom: 40px;
+    }
+
+    .about-container h3 {
+      font-size: 2rem;
+      color: #F3E5F5;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .about-container ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .about-container li {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #F3E5F5;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .about-container li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #6A1E55;
+      font-size: 2rem;
+      top: 0;
+    }
+
+    .slogan {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #F3E5F5;
+      font-style: italic;
+      margin-top: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #F3E5F5;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 15px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    textarea {
+      resize: none;
+      height: 150px;
+    }
+
+    .form-btn {
+      padding: 12px 20px;
+      background: #6A1E55;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      width: 50%;
+      margin-top: 15px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .form-btn:hover {
+      background: #3B1C32;
+      transform: scale(1.05);
+    }
+
+    .footer {
+      margin-top: 50px;
+      padding-top: 30px;
+      background-color: #3B1C32;
+      text-align: center;
+      padding-bottom: 30px;
+      border-radius: 10px;
+      width: 100%;
+    }
+
+    .footer h2 {
+      font-size: 2rem;
+      color: #F3E5F5;
+      margin-bottom: 15px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .social-icons a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+
+    .privacy-policy {
+      margin-top: 30px;
+      font-size: 1rem;
+      color: #F3E5F5;
+    }
+
+    .privacy-policy a {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <button class="back-button" onclick="window.history.back();">Back</button>
+
+  <div class="container">
+    <!-- Left Content (About Our Idea) -->
+    <div class="section">
+      <div class="about-container">
+        <h3>Our Idea</h3>
+        <ul>
+          <li>Connecting people with local chefs who make healthy, sustainable, and eco-friendly meals.</li>
+          <li>Promoting responsible consumption and reducing food waste in our communities.</li>
+          <li>Empowering local businesses and individuals by supporting home-cooked meal services.</li>
+          <li>Creating a sustainable food delivery platform that benefits both users and the environment.</li>
+        </ul>
+        <p class="slogan">"Eating well, living well – together, we can make a difference!"</p>
+      </div>
+    </div>
+
+    <!-- Right Content (Contact Form) -->
+    <div class="section">
+      <h2>Contact Us</h2>
+      <form action=" " method="POST">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type=" " class="form-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer">
+    <h2>Follow Us</h2>
+    <div class="social-icons">
+        <a href="#" target="_blank">
+            <img src="C:\images/instagram.jpg" alt="Instagram">
+          </a>
+        <a href="#" target="_blank">
+            <img src="C:\images/facebook.jpg" alt="Facebook">
+          </a>
+      <a href="#" target="_blank">
+        <img src="C:\images/telegram.jpg" alt="Telegram">
+      </a>
+      <a href="#" target="_blank">
+        <img src="C:\images/whatsapp.jpg" alt="Whatsapp">
+      </a>
+      <a href="#" target="_blank">
+        <img src="C:\images/mail.jpg" alt="Mail">
+      </a>
+    </div>
+    <div class="privacy-policy">
+      <p>Read our <a href="#">Privacy Policy</a>.</p>
+    </div>
+  </div>
+
+</body>
+</html>

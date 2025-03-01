@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastro Pulse - Join Us</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Add a gradient overlay that will animate in the background */
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('C:\images/cd.jpg') no-repeat center center/cover;
+            background-size: 100% 100%; /* Set gradient size for smooth movement */
+            animation: gradientShift 6s ease infinite alternate;
+            z-index: -1;  /* Ensure it's behind the content */
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 650px;
+            background: url('C:\images/us.jpg') no-repeat center center/cover;
+            border-radius: 15px;
+            padding: 30px 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            overflow: hidden;
+            z-index: 1; /* Make sure content is on top */
+        }
+
+        /* Pop and Show Effect on Hover */
+        .container:hover {
+            transform: scale(1.05); /* Slightly enlarges the container */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8); /* Makes the shadow deeper */
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(59, 28, 50, 0.7); /* Semi-transparent overlay */
+            z-index: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .container:hover::before {
+            opacity: 0.5; /* Reduces overlay on hover for a "pop" effect */
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #FBFBFB;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .option-button {
+            padding: 15px 20px;
+            background: #A64D79;
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .option-button:hover {
+            background: #6A1E55;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .option-button i {
+            margin-left: 12px;
+            font-size: 1.5em;
+        }
+
+        .back-button {
+            margin-top: 40px;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            background-color: #A64D79;
+            color: #FBFBFB;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background-color: #6A1E55;
+            color: white;
+        }
+
+        /* Media Query for Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+            .option-button {
+                font-size: 1em;
+                padding: 12px 18px;
+            }
+
+            .back-button {
+                margin-top: 30px;
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Gradient Overlay -->
+    <div class="gradient-overlay"></div>
+
+    <div class="container">
+        <div class="content">
+            <h1>Join Us</h1>
+            <p>
+                Become part of Gastro Pulse and help us reshape the future of food delivery. Whether you’re a passionate cook or eager to explore an exciting role as a delivery partner, this is your opportunity to make an impact.
+            </p>
+            <div class="options-container">
+                <!-- Join as Cook -->
+                <a href="join-cook.html" class="option-button">
+                    Join as Cook <i>&#127859;</i> <!-- Icon for cooking -->
+                </a>
+                <!-- Join as Delivery Partner -->
+                <a href="join-delivery.html" class="option-button">
+                    Join as Delivery Partner <i>&#128663;</i> <!-- Icon for delivery -->
+                </a>
+            </div>
+            <!-- Back to Home Button -->
+            <a href="index.html" class="back-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
