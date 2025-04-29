@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nutritional Meal</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('C:\images/main.jpg'); 
+      background-size: cover;
+      background-position: center;
+     
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 80px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+     
+    }
+
+    h2 {
+      text-align: center;
+      color: #3B1C32;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #3B1C32;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #3B1C32;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #6A1E55;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #3B1C32;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .output {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #6A1E55;
+    }
+
+    #otherInput {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="main.html" class="back-btn">Back to Options</a>
+
+  <div class="container">
+    <h2>Nutritional Meal</h2>
+
+    <label for="diet">Dietary Preferences:</label>
+    <select id="diet" onchange="toggleOtherInput()">
+      <option value="Vegetarian">Vegetarian</option>
+      <option value="Vegan">Vegan</option>
+      <option value="Keto">Keto</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <div id="otherInputContainer">
+      <label for="otherInput">Please specify your dietary preference:</label>
+      <input type="text" id="otherInput" placeholder="e.g. Gluten-free, Paleo">
+    </div>
+
+    <label for="timing">Meal Timing:</label>
+    <select id="timing">
+      <option value="Pre-Workout Meal">Pre-Workout Meal</option>
+      <option value="Post-Workout Meal">Post-Workout Meal</option>
+      <option value="Breakfast">Breakfast</option>
+      <option value="Lunch">Lunch</option>
+      <option value="Dinner">Dinner</option>
+    </select>
+
+    <button onclick="getMealSuggestions()">Get Meal Suggestions</button>
+
+    <div class="output" id="outputMessage"></div>
+  </div>
+
+  <script>
+    function toggleOtherInput() {
+      const diet = document.getElementById("diet").value;
+      const otherInput = document.getElementById("otherInput");
+      const container = document.getElementById("otherInputContainer");
+
+      if (diet === "Other") {
+        otherInput.style.display = "block";
+        container.style.display = "block";
+      } else {
+        otherInput.style.display = "none";
+        container.style.display = "none";
+      }
+    }
+
+    function getMealSuggestions() {
+      const diet = document.getElementById("diet").value;
+      const customDiet = document.getElementById("otherInput").value;
+      const timing = document.getElementById("timing").value;
+
+      let finalDiet = diet === "Other" ? customDiet : diet;
+
+      if (!finalDiet) {
+        document.getElementById("outputMessage").innerText = "Please enter your dietary preference.";
+        return;
+      }
+
+      document.getElementById("outputMessage").innerText =
+        `ChatBot is suggesting meals for a ${finalDiet} diet during ${timing.toLowerCase()}...`;
+    }
+  </script>
+</body>
+</html>
