@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Meal Type</title>
+  <style>
+    body {
+      background-image: url('C:\images/main-transformed.jpeg');
+      background-size: cover;
+      background-position: center;
+      font-family: "Times New Roman", serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #3B1C32;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .back-button {
+      background-color: #3B1C32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #3B1C32;
+      margin: 10px 0;
+    }
+
+    h2 {
+      font-size: 22px;
+      color: #6A1E55;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 15px 0;
+      height: 120px;
+      cursor: pointer;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .card .overlay {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.4);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .card p {
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+
+    .nutritional {
+      background-image: url('C:\images/nutrional.jpg');
+      animation: gradientShift 6s infinite alternate;
+      background-size: cover;
+      background-position: center;
+      
+    }
+
+    .health-centric {
+      background-image: url('C:\images/healthcentric.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .craving {
+      background-image: url('C:\images/casualcraving.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="back-button" onclick="location.href='index.html'">Back to Home</button>
+    <h1>Gastro Pulse</h1>
+    <h2>Select Your Option</h2>
+
+    <div class="card nutritional" onclick="location.href='nutritional.html'">
+      <div class="overlay">
+        <h3>Nutritional Meal</h3>
+        <p>Personalized dietary plans with meal suggestions and daily nutrition tracking.</p>
+      </div>
+    </div>
+
+    <div class="card health-centric" onclick="location.href='health-centric.html'">
+      <div class="overlay">
+        <h3>Health-Centric</h3>
+        <p>Customized meals for specific health needs (e.g., BP, diabetes, low hemoglobin).</p>
+      </div>
+    </div>
+
+    <div class="card craving" onclick="location.href='casual-craving.html'">
+      <div class="overlay">
+        <h3>Casual Craving</h3>
+        <p>Home-cooked meal options for comfort cravings.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
