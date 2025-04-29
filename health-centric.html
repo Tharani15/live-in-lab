@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health-Centric Meal Suggestions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('C:\images/main.jpg'); 
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 80px auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    h2 {
+      text-align: center;
+      color: #3B1C32;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #3B1C32;
+    }
+
+    select, input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #3B1C32;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .btn {
+      background-color: #3B1C32;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background-color: #6A1E55;
+    }
+
+    .btn-secondary {
+      background-color: #3B1C32;
+      margin-bottom: 15px;
+    }
+
+    .top-link {
+      text-align: center;
+      margin-top: -50px;
+    }
+
+    .top-link a {
+      background-color: #3B1C32;
+      color: white;
+      padding: 8px 14px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .top-link a:hover {
+      background-color: #6A1E55;
+    }
+
+    .output {
+      margin-top: 15px;
+      color: #6A1E55;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+    <a href="main.html" class="back-btn">Back to Options</a>
+    
+
+  <div class="container">
+
+    
+    <h2>Health-Centric</h2>
+
+    <label for="condition">Health Condition:</label>
+    <select id="condition">
+      <option value="High BP">High BP</option>
+      <option value="Diabetes">Diabetes</option>
+      <option value="High Cholesterol">High Cholesterol</option>
+      <option value="PCOS">PCOS</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="report">Upload Doctor's Checkup Report:</label>
+    <input type="file" id="report" accept=".pdf,.doc,.docx,.jpg,.png">
+
+    <button class="btn" onclick="submitHealthForm()">Get Health Meal Suggestions</button>
+
+    <div class="output" id="outputMessage"></div>
+  </div>
+
+  <script>
+    function goBack() {
+      // This should link back to the Options page
+      window.location.href = 'options.html'; // Change filename if needed
+    }
+
+    function submitHealthForm() {
+      const condition = document.getElementById("condition").value;
+      const report = document.getElementById("report").value;
+
+      if (!report) {
+        document.getElementById("outputMessage").innerText = "Please upload your doctor's report to get personalized suggestions.";
+        return;
+      }
+
+      document.getElementById("outputMessage").innerText =
+        `Generating meal suggestions for the condition: ${condition}. Please wait...`;
+    }
+  </script>
+
+</body>
+</html>
