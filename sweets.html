@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sweets</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      background-image: url('C:\images/main-transformed.jpeg'); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    .container {
+      padding: 30px;
+      min-height: 100vh;
+      background-color: rgba(59, 28, 50, 0.8);
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 30px;
+    }
+
+    h2 {
+      color: #e9ecef;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .meal-category {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .meal-item {
+      display: flex;
+      background-color: #e9ecef;
+      border-radius: 10px;
+      overflow: hidden;
+      color: #3B1C32;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    .meal-item img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-right: 3px solid #3B1C32;
+    }
+
+    .meal-info {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .meal-info h3 {
+      margin: 0 0 8px 0;
+      font-size: 20px;
+    }
+
+    .meal-info p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #3B1C32;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    
+
+    .back-btn:hover {
+      background-color: #6A1E55;
+    }
+
+    @media (max-width: 600px) {
+      .meal-item {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .meal-item img {
+        width: 100%;
+        height: 180px;
+        border-right: none;
+        border-bottom: 3px solid #3B1C32;
+      }
+
+      .meal-info {
+        text-align: center;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <a href="casual-craving.html" class="back-btn">Back to Options</a>
+  <div class="container">
+    <h2>Sweets</h2>
+    <div class="meal-category">
+        <div class="meal-item">
+          <img src="C:\images/gulab-jamun.jpg" alt="Gulab Jamun" />
+          <div class="meal-info">
+            <h3>Gulab Jamun</h3>
+            <p>Deep-fried milk solids soaked in rose-scented sugar syrup.</p>
+            <p>A classic Indian dessert served warm or cold.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/rasgulla.jpg" alt="Rasgulla" />
+          <div class="meal-info">
+            <h3>Rasgulla</h3>
+            <p>Spongy balls made of chhena soaked in light sugar syrup.</p>
+            <p>Refreshing and light Bengali sweet treat.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/kaju-katli.jpg" alt="Kaju Katli" />
+          <div class="meal-info">
+            <h3>Kaju Katli</h3>
+            <p>Thin diamond-shaped fudge made from cashew nuts and sugar.</p>
+            <p>Rich, elegant sweet often enjoyed during festivals.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/mysore-pak.jpg" alt="Mysore Pak" />
+          <div class="meal-info">
+            <h3>Mysore Pak</h3>
+            <p>Ghee-rich sweet made with gram flour and sugar.</p>
+            <p>Soft, melt-in-the-mouth texture with a golden hue.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/payasam.jpg" alt="Payasam" />
+          <div class="meal-info">
+            <h3>Payasam</h3>
+            <p>South Indian sweet dish made with milk, rice/vermicelli, and jaggery.</p>
+            <p>Garnished with nuts and raisins for extra flavor.</p>
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+
+  <script>
+    function goBack() {
+      window.location.href = "casual_craving.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Non Veg Breakfast Options</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      background-image: url('C:\images/main-transformed.jpeg'); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    .container {
+      padding: 30px;
+      min-height: 100vh;
+      background-color: rgba(59, 28, 50, 0.8);
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 30px;
+    }
+
+    h2 {
+      color: #e9ecef;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .meal-category {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .meal-item {
+      display: flex;
+      background-color: #e9ecef;
+      border-radius: 10px;
+      overflow: hidden;
+      color: #3B1C32;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    .meal-item img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-right: 3px solid #3B1C32;
+    }
+
+    .meal-info {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .meal-info h3 {
+      margin: 0 0 8px 0;
+      font-size: 20px;
+    }
+
+    .meal-info p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #3B1C32;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    
+
+    .back-btn:hover {
+      background-color: #6A1E55;
+    }
+
+    @media (max-width: 600px) {
+      .meal-item {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .meal-item img {
+        width: 100%;
+        height: 180px;
+        border-right: none;
+        border-bottom: 3px solid #3B1C32;
+      }
+
+      .meal-info {
+        text-align: center;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <a href="casual-craving.html" class="back-btn">Back to Options</a>
+  <div class="container">
+    <h2>Non-Vegetarian Breakfast Options</h2>
+    <div class="meal-category">
+        <div class="meal-item">
+          <img src="C:\images/egg-dosa.jpg" alt="Egg Dosa" />
+          <div class="meal-info">
+            <h3>Egg Dosa</h3>
+            <p>South Indian dosa topped with seasoned egg omelette.</p>
+            <p>High in protein and great for a powered-up morning.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/chicken-sandwich.jpg" alt="Grilled Chicken Sandwich" />
+          <div class="meal-info">
+            <h3>Grilled Chicken Sandwich</h3>
+            <p>Whole wheat sandwich stuffed with grilled chicken and veggies.</p>
+            <p>A balanced breakfast with lean protein and fiber.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/keema-paratha.jpg" alt="Keema Paratha" />
+          <div class="meal-info">
+            <h3>Keema Paratha</h3>
+            <p>Flatbread stuffed with spicy minced meat, served hot.</p>
+            <p>Hearty and filling, perfect for a weekend breakfast.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/boiled-eggs.jpg" alt="Boiled Eggs & Toast" />
+          <div class="meal-info">
+            <h3>Boiled Eggs & Toast</h3>
+            <p>Simple and healthy boiled eggs with buttered toast.</p>
+            <p>Classic and nutritious breakfast combo.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/chicken-upma.jpg" alt="Chicken Upma" />
+          <div class="meal-info">
+            <h3>Chicken Upma</h3>
+            <p>Savory semolina dish with shredded chicken and spices.</p>
+            <p>A protein-rich twist on the traditional upma.</p>
+          </div>
+        </div>
+      </div>
+      
+    
+    
+
+  <script>
+    function goBack() {
+      window.location.href = "casual_craving.html";
+    }
+  </script>
+</body>
+</html>

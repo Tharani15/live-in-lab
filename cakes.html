@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cakes</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      background-image: url('C:\images/main-transformed.jpeg'); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    .container {
+      padding: 30px;
+      min-height: 100vh;
+      background-color: rgba(59, 28, 50, 0.8);
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 30px;
+    }
+
+    h2 {
+      color: #e9ecef;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .meal-category {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .meal-item {
+      display: flex;
+      background-color: #e9ecef;
+      border-radius: 10px;
+      overflow: hidden;
+      color: #3B1C32;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    .meal-item img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-right: 3px solid #3B1C32;
+    }
+
+    .meal-info {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .meal-info h3 {
+      margin: 0 0 8px 0;
+      font-size: 20px;
+    }
+
+    .meal-info p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #3B1C32;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    
+
+    .back-btn:hover {
+      background-color: #6A1E55;
+    }
+
+    @media (max-width: 600px) {
+      .meal-item {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .meal-item img {
+        width: 100%;
+        height: 180px;
+        border-right: none;
+        border-bottom: 3px solid #3B1C32;
+      }
+
+      .meal-info {
+        text-align: center;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <a href="casual-craving.html" class="back-btn">Back to Options</a>
+  <div class="container">
+    <h2>Cakes</h2>
+    <div class="meal-category">
+        <div class="meal-item">
+          <img src="C:\images/chocolate-cake.jpg" alt="Chocolate Cake" />
+          <div class="meal-info">
+            <h3>Chocolate Cake</h3>
+            <p>Rich and moist cake layered with creamy chocolate frosting.</p>
+            <p>A favorite for every celebration and sweet craving.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/black-forest.jpg" alt="Black Forest Cake" />
+          <div class="meal-info">
+            <h3>Black Forest Cake</h3>
+            <p>Chocolate sponge layered with whipped cream and cherries.</p>
+            <p>Decorated with chocolate shavings and fruit on top.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/vanilla-cake.jpg" alt="Vanilla Cake" />
+          <div class="meal-info">
+            <h3>Vanilla Cake</h3>
+            <p>Classic vanilla-flavored sponge cake with buttercream icing.</p>
+            <p>Light, airy, and perfect for any occasion.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/red-velvet.jpg" alt="Red Velvet Cake" />
+          <div class="meal-info">
+            <h3>Red Velvet Cake</h3>
+            <p>Velvety red cake layers with cream cheese frosting.</p>
+            <p>Stylish, smooth, and indulgent dessert choice.</p>
+          </div>
+        </div>
+      
+        <div class="meal-item">
+          <img src="C:\images/pineapple-cake.jpg" alt="Pineapple Cake" />
+          <div class="meal-info">
+            <h3>Pineapple Cake</h3>
+            <p>Soft vanilla sponge infused with pineapple flavor and cream.</p>
+            <p>Refreshing fruity twist for tropical dessert lovers.</p>
+          </div>
+        </div>
+      </div>
+      
+    
+
+  <script>
+    function goBack() {
+      window.location.href = "casual_craving.html";
+    }
+  </script>
+</body>
+</html>
